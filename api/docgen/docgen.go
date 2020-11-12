@@ -202,7 +202,7 @@ func init() {
 	addExample(map[uuid.UUID][]storiface.WorkerJob{
 		uuid.MustParse("ef8d99a2-6865-4189-8ffa-9fef0f806eee"): {
 			{
-				ID:       storiface.CallID{
+				ID: storiface.CallID{
 					Sector: abi.SectorID{Miner: 1000, Number: 100},
 					ID:     uuid.MustParse("76081ba0-61bd-45a5-bc08-af05f1c26e5d"),
 				},
@@ -216,8 +216,8 @@ func init() {
 	})
 	addExample(map[uuid.UUID]storiface.WorkerStats{
 		uuid.MustParse("ef8d99a2-6865-4189-8ffa-9fef0f806eee"): {
-			Info:       storiface.WorkerInfo{
-				Hostname:  "host",
+			Info: storiface.WorkerInfo{
+				Hostname: "host",
 				Resources: storiface.WorkerResources{
 					MemPhysical: 256 << 30,
 					MemSwap:     120 << 30,
@@ -237,10 +237,10 @@ func init() {
 	// worker specific
 	addExample(storiface.AcquireMove)
 	addExample(storiface.UnpaddedByteIndex(abi.PaddedPieceSize(1 << 20).Unpadded()))
-	addExample(map[sealtasks.TaskType]struct {}{
+	addExample(map[sealtasks.TaskType]struct{}{
 		sealtasks.TTPreCommit2: {},
-		sealtasks.TTCommit1: {},
-		sealtasks.TTCommit2: {},
+		sealtasks.TTCommit1:    {},
+		sealtasks.TTCommit2:    {},
 	})
 }
 
